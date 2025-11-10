@@ -1,8 +1,9 @@
-// 1.20.1	2024-07-15T22:10:38.7414619	Item Models: dttwilightforest
+// 1.20.1	2025-11-10T20:06:52.9318515	Item Models: dttwilightforest
 07d28b18b2bb4f14b0990482205194039aa0251e assets/dttwilightforest/models/item/canopy_branch.json
 42dd88c732c62209d0c3c26512cf5745da340177 assets/dttwilightforest/models/item/canopy_seed.json
 acac1ec572af2729e636d6faeaff8c01f0bafac3 assets/dttwilightforest/models/item/darkwood_branch.json
 1c960d69f585400f286228dccf0a73384b39b529 assets/dttwilightforest/models/item/darkwood_seed.json
+c0816fbd10a211677b8a7d4487ea22eb7560013d assets/dttwilightforest/models/item/giga_spruce_seed.json
 90f4bbab390eb8093e71a8e58bf3e66b29387cfc assets/dttwilightforest/models/item/mangrove_branch.json
 7726e8656b8290d8d0a688ffff09bc861ea2c2d7 assets/dttwilightforest/models/item/mangrove_roots.json
 9f2509cc1635e44746338bef3272fced5c0f00ca assets/dttwilightforest/models/item/mangrove_seed.json

@@ -90,10 +90,10 @@ sourceSets.main.get().resources {
 dependencies {
     minecraft("net.minecraftforge:forge:$mcVersion-${property("forgeVersion")}")
 
-    //implementation(fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-$mcVersion:${property("dynamicTreesVersion")}"))
-    //implementation(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
-    implementation(fg.deobf("curse.maven:dynamictrees-252818:5527670"))
-    implementation(fg.deobf("curse.maven:dynamictreesplus-478155:5536181"))
+    implementation(fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-$mcVersion:${property("dynamicTreesVersion")}"))
+    implementation(fg.deobf("com.ferreusveritas.dynamictreesplus:DynamicTreesPlus-$mcVersion:${property("dynamicTreesPlusVersion")}"))
+    //implementation(fg.deobf("curse.maven:dynamictrees-252818:5527670"))
+    //implementation(fg.deobf("curse.maven:dynamictreesplus-478155:5536181"))
 
     implementation(fg.deobf("curse.maven:the-twilight-forest-227639:5468648"))
 

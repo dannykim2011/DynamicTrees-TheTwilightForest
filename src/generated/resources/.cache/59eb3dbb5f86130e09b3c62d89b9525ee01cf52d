@@ -1,9 +1,9 @@
-// 1.20.1	2024-07-15T22:10:38.7351143	Loot Tables
+// 1.20.1	2025-11-10T20:06:52.9296321	Loot Tables
 e3fecef0b3d19e8f47be9b40c4f8033d7d336564 data/dttwilightforest/loot_tables/blocks/canopy_leaves.json
 f72e30b0d3057808a516e7072900c902a65041d8 data/dttwilightforest/loot_tables/blocks/darkwood_leaves.json
 13b8084ae3265162761b83d2b35664100874ca45 data/dttwilightforest/loot_tables/blocks/dark_forest_birch_leaves.json
 f5ffd82d8657c92975c7e44eee766f7d91ac6484 data/dttwilightforest/loot_tables/blocks/dark_forest_oak_leaves.json
-c25cea72236c448bac97cc926fd1cb3a27c034e6 data/dttwilightforest/loot_tables/blocks/mangrove_leaves.json
+cc01ea37b81029ae32eeae2120ecabb26d8181ee data/dttwilightforest/loot_tables/blocks/mangrove_leaves.json
 ff6371956d3c7dc11466aab31e54ec7f1d5388e1 data/dttwilightforest/loot_tables/blocks/mining_leaves.json
 5461fa3a7b4008dd9f790f48b571adbbd61755d5 data/dttwilightforest/loot_tables/blocks/mushgloom_cap.json
 e724b1ae6a83093c0d2aaf41ab16179fe635d00c data/dttwilightforest/loot_tables/blocks/rainbow_oak_leaves.json
@@ -45,6 +45,7 @@ e13a6dcd22c1846e0b30b202fa34cd02215c28b3 data/dttwilightforest/loot_tables/trees
 5d54e2b66f234f0f5bcc296d99327bb6395371f9 data/dttwilightforest/loot_tables/trees/roots/mangrove.json
 f285305b96d850ca2ffe0cc87442b3eaf1af08df data/dttwilightforest/loot_tables/trees/voluntary/canopy.json
 ec35d27e0566c530e317f998e886f3184e0c2b65 data/dttwilightforest/loot_tables/trees/voluntary/darkwood.json
+fd91c6c6d89ec67ccc61c4ff09f352545d8734aa data/dttwilightforest/loot_tables/trees/voluntary/giga_spruce.json
 95490eadb837a6505b9ea31d0ca5aa5c3c13e388 data/dttwilightforest/loot_tables/trees/voluntary/mangrove.json
 c4422c65b238ec584c724433c4222268debe0f16 data/dttwilightforest/loot_tables/trees/voluntary/mining.json
 56b525c36616f8b52321b93a84054081b1d66f8d data/dttwilightforest/loot_tables/trees/voluntary/mushgloom.json

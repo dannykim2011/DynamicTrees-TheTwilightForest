@@ -1,10 +1,10 @@
-// 1.20.1	2024-07-15T22:10:38.7437367	dttwilightforest DT Block Tags
+// 1.20.1	2025-11-10T20:06:52.9343919	dttwilightforest DT Block Tags
 d74b68402bde057669a3f1e9d9cd73467d081aaa data/dynamictrees/tags/blocks/aerial_roots_rooty_soil.json
 e2aa03719911c1dc0145c6cf9aa3324ce29d4e43 data/dynamictrees/tags/blocks/branches_that_burn.json
-9c58eb14875de45b7db189a05178cc83023602d1 data/dynamictrees/tags/blocks/fungus_branches.json
-76f2c71be47231123c54df0ff0af98b05c2d6acb data/dynamictrees/tags/blocks/fungus_caps.json
+a160110569dab93e9bd00f1c749a41e1aee5c263 data/dynamictrees/tags/blocks/fungus_branches.json
+d033020f71fabd8ffb83825ec3687399d2d0a10b data/dynamictrees/tags/blocks/fungus_caps.json
 f6b1b7d2a3bccb5fa4e658f3877935df40c2ce02 data/dynamictrees/tags/blocks/leaves.json
 24a2a62f2d9a4bbef7847b2443cfe556b88a9d59 data/dynamictrees/tags/blocks/roots.json
 811575ab881e126cfca87d0831c8a26d2f3a1d68 data/dynamictrees/tags/blocks/rooty_soil.json
-57d6f312ce496840c15fb4f889fad9fd3ba040f4 data/dynamictrees/tags/blocks/saplings.json
+b7aa5f6168e2a947a091a0a9530abbf3525b99aa data/dynamictrees/tags/blocks/saplings.json
 9b2fbb7572aa74267bcb2bf946489e4c20f49ddb data/dynamictrees/tags/blocks/stripped_branches_that_burn.json
