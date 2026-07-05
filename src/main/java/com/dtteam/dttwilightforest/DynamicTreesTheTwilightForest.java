@@ -1,6 +1,7 @@
 package com.dtteam.dttwilightforest;
 
 import com.dtteam.dynamictrees.data.GatherDataHelper;
+import com.dtteam.dynamictrees.api.worldgen.GroundFinder;
 import com.dtteam.dynamictrees.registry.NeoForgeRegistryHandler;
 import com.dtteam.dynamictrees.block.leaves.LeavesProperties;
 import com.dtteam.dynamictrees.block.soil.SoilProperties;
@@ -10,7 +11,11 @@ import com.dtteam.dttwilightforest.init.DTTFClient;
 import com.dtteam.dttwilightforest.init.DTTFPlusRegistries;
 import com.dtteam.dttwilightforest.init.DTTFRegistries;
 import com.dtteam.dttwilightforest.loot.LootModifiers;
+import com.dtteam.dttwilightforest.worldgen.TwilightForestGroundFinder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
@@ -47,6 +52,13 @@ public class DynamicTreesTheTwilightForest {
         if (ModList.get().isLoaded("dynamictreesplus")){
             DTTFPlusRegistries.setup();
         }
+        GroundFinder.registerGroundFinder(
+                ResourceKey.create(
+                        Registries.DIMENSION,
+                        ResourceLocation.fromNamespaceAndPath("twilightforest", "twilight_forest")
+                ),
+                new TwilightForestGroundFinder()
+        );
     }
 
     private void gatherData(final GatherDataEvent event) {
