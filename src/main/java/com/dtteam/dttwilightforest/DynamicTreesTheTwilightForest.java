@@ -8,7 +8,6 @@ import com.dtteam.dynamictrees.block.soil.SoilProperties;
 import com.dtteam.dynamictrees.tree.family.Family;
 import com.dtteam.dynamictrees.tree.species.Species;
 import com.dtteam.dttwilightforest.init.DTTFClient;
-import com.dtteam.dttwilightforest.init.DTTFPlusRegistries;
 import com.dtteam.dttwilightforest.init.DTTFRegistries;
 import com.dtteam.dttwilightforest.loot.LootModifiers;
 import com.dtteam.dttwilightforest.worldgen.TwilightForestGroundFinder;
@@ -24,6 +23,9 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DynamicTreesTheTwilightForest.MOD_ID)
 public class DynamicTreesTheTwilightForest {
@@ -34,9 +36,7 @@ public class DynamicTreesTheTwilightForest {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
 
-        if (ModList.get().isLoaded("dynamictreesplus")){
-            modEventBus.register(DTTFPlusRegistries.class);
-        }
+        ifDynamicTreesPlusLoaded(() -> modEventBus.register(getDynamicTreesPlusRegistriesClass()));
 
         LootModifiers.register(modEventBus);
 
@@ -49,9 +49,7 @@ public class DynamicTreesTheTwilightForest {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         DTTFRegistries.setup();
-        if (ModList.get().isLoaded("dynamictreesplus")){
-            DTTFPlusRegistries.setup();
-        }
+        ifDynamicTreesPlusLoaded(() -> invokeDynamicTreesPlusRegistriesMethod("setup"));
         GroundFinder.registerGroundFinder(
                 ResourceKey.create(
                         Registries.DIMENSION,
@@ -63,7 +61,7 @@ public class DynamicTreesTheTwilightForest {
 
     private void gatherData(final GatherDataEvent event) {
         if (ModList.get().isLoaded("dynamictreesplus")) {
-            DTTFPlusRegistries.gatherData(event);
+            invokeDynamicTreesPlusRegistriesMethod("gatherData", GatherDataEvent.class, event);
         } else {
             GatherDataHelper.gatherAllData(MOD_ID, event,
                     SoilProperties.REGISTRY,
@@ -76,6 +74,39 @@ public class DynamicTreesTheTwilightForest {
 
     public static ResourceLocation location(final String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
+
+    private static void ifDynamicTreesPlusLoaded(final Runnable action) {
+        if (ModList.get().isLoaded("dynamictreesplus")) {
+            action.run();
+        }
+    }
+
+    private static Class<?> getDynamicTreesPlusRegistriesClass() {
+        try {
+            return Class.forName("com.dtteam.dttwilightforest.init.DTTFPlusRegistries");
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("Could not load Dynamic Trees Plus integration class.", e);
+        }
+    }
+
+    private static void invokeDynamicTreesPlusRegistriesMethod(final String methodName) {
+        invokeDynamicTreesPlusRegistriesMethod(methodName, new Class<?>[0]);
+    }
+
+    private static void invokeDynamicTreesPlusRegistriesMethod(final String methodName, final Class<?> parameterType, final Object argument) {
+        invokeDynamicTreesPlusRegistriesMethod(methodName, new Class<?>[]{parameterType}, argument);
+    }
+
+    private static void invokeDynamicTreesPlusRegistriesMethod(final String methodName, final Class<?>[] parameterTypes, final Object... arguments) {
+        try {
+            final Method method = getDynamicTreesPlusRegistriesClass().getMethod(methodName, parameterTypes);
+            method.invoke(null, arguments);
+        } catch (NoSuchMethodException | IllegalAccessException e) {
+            throw new IllegalStateException("Could not invoke Dynamic Trees Plus integration method: " + methodName, e);
+        } catch (InvocationTargetException e) {
+            throw new IllegalStateException("Dynamic Trees Plus integration failed while invoking: " + methodName, e.getCause());
+        }
     }
 
 }
